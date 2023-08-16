@@ -6,7 +6,7 @@ import com.github.mikephil.charting.data.Entry;
 
 import java.util.ArrayList;
 
-public class GerarGrafico extends AppCompatActivity {
+public class Grafico extends AppCompatActivity {
     PieChart pieChart;
 
     ArrayList<String> categorias = new ArrayList<>();
