@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyFinance</string>
+    <string name="gerar_extrato">Gerar Extrato</string>
+</resources>
