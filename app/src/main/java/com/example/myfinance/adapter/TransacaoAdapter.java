@@ -36,7 +36,7 @@ public class TransacaoAdapter extends RecyclerView.Adapter<TransacaoAdapter.Tran
     @Override
     public TransacaoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflador = LayoutInflater.from(parent.getContext());
-        TransacaoItemBinding  transacaoItem = DataBindingUtil.inflate(inflador, R.layout.lista_transicoes, parent, false);
+        TransacaoItemBinding  transacaoItem = DataBindingUtil.inflate(inflador, R.layout.transacao_item, parent, false);
         transacaoItem.setLifecycleOwner(lifecycleOwner);
         return new TransacaoViewHolder(transacaoItem);
     }
@@ -71,8 +71,8 @@ public class TransacaoAdapter extends RecyclerView.Adapter<TransacaoAdapter.Tran
             this.binding = binding;
         }
         public void bind(Transacao r){
-            binding.setVm(new TransacaoViewModel(r));
-            binding.executePendingBidings();
+            binding.setTransacao(r);
+            binding.executePendingBindings();
         }
     }
 }
