@@ -13,7 +13,4 @@ public class GerarGrafico extends AppCompatActivity {
     ArrayList<Entry> valores = new ArrayList<>();
     ArrayList<Integer> cores = new ArrayList<>();
 
-    public static void criarGrafico(){
-        pieChart
-    }
 }
