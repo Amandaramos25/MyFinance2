@@ -22,6 +22,12 @@ public class Transacao {
         contadorDeTransacoes += 1;
     }
 
+    public Transacao(boolean tipo, double valor, String categoria) {
+        this.tipo = tipo;
+        this.valor = valor;
+        this.categoria = categoria;
+    }
+
     public boolean isTipo() {
         return tipo;
     }

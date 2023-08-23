@@ -1,7 +1,9 @@
 package com.example.myfinance.adapter;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -21,12 +23,10 @@ public class TransacaoAdapter extends RecyclerView.Adapter<TransacaoAdapter.Tran
 
     private List<Transacao> transacoes;
     private LifecycleOwner lifecycleOwner;
-    private TransacaoViewModel transacaoViewModel;
 
-    public TransacaoAdapter(LifecycleOwner lifecycleOwner, TransacaoViewModel vm){
+    public TransacaoAdapter(LifecycleOwner lifecycleOwner){
         this.transacoes = Collections.emptyList();
         this.lifecycleOwner = lifecycleOwner;
-        transacaoViewModel = vm;
     }
     public void atualizarLista(List<Transacao> transacoes){
         this.transacoes = transacoes;
@@ -36,8 +36,7 @@ public class TransacaoAdapter extends RecyclerView.Adapter<TransacaoAdapter.Tran
     @Override
     public TransacaoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflador = LayoutInflater.from(parent.getContext());
-        TransacaoItemBinding  transacaoItem = DataBindingUtil.inflate(inflador, R.layout.transacao_item, parent, false);
-        transacaoItem.setLifecycleOwner(lifecycleOwner);
+        View transacaoItem = inflador.inflate(R.layout.transacao_item, parent, false);
         return new TransacaoViewHolder(transacaoItem);
     }
 
@@ -51,28 +50,18 @@ public class TransacaoAdapter extends RecyclerView.Adapter<TransacaoAdapter.Tran
         return 0;
     }
 
-    @Override
-    public void onViewAttachedToWindow(@NonNull TransacaoViewHolder holder) {
-        super.onViewAttachedToWindow(holder);
-        holder.binding.setLifecycleOwner(lifecycleOwner);
-    }
-
-    @Override
-    public void onViewDetachedFromWindow(@NonNull TransacaoViewHolder holder) {
-        super.onViewDetachedFromWindow(holder);
-        holder.binding.setLifecycleOwner(null);
-    }
 
 
     static class TransacaoViewHolder extends RecyclerView.ViewHolder{
-        private TransacaoItemBinding binding;
-        public TransacaoViewHolder(@NonNull TransacaoItemBinding binding){
-            super(binding.getRoot());
-            this.binding = binding;
+        private TextView nomeTransacao;
+        private TextView valorTransacao;
+        public TransacaoViewHolder(@NonNull View view){
+            super(view);
+            nomeTransacao = view.findViewById(R.id.nome_transacao);
+            valorTransacao = view.findViewById(R.id.valor_transacao);
         }
         public void bind(Transacao r){
-            binding.setTransacao(r);
-            binding.executePendingBindings();
+            nomeTransacao.setText(r.get);
         }
     }
 }
