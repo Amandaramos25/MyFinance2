@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class Transacao {
     private static int contadorDeTransacoes = 0;
+
+    private String nome;
     private boolean tipo;
     private double valor;
     private String categoria;
@@ -11,7 +13,8 @@ public class Transacao {
     private String comentario;
     private Integer foto;
 
-    public Transacao(boolean tipo, double valor, String categoria, Date data, String comentario, Integer foto) {
+    public Transacao(String nome,boolean tipo, double valor, String categoria, Date data, String comentario, Integer foto) {
+        this.nome = nome;
         this.tipo = tipo;
         this.valor = valor;
         this.categoria = categoria;
@@ -22,10 +25,17 @@ public class Transacao {
         contadorDeTransacoes += 1;
     }
 
-    public Transacao(boolean tipo, double valor, String categoria) {
-        this.tipo = tipo;
+    public Transacao(String nome, double valor) {
+        this.nome = nome;
         this.valor = valor;
-        this.categoria = categoria;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public boolean isTipo() {

@@ -8,7 +8,7 @@ public class TransacaoRepo {
 
     public TransacaoRepo(){
         this.transacoes = new ArrayList<>();
-
+        transacoes.add(new Transacao("Compra do mês", 500));
     }
 
     public List<Transacao> getTrasacao(){

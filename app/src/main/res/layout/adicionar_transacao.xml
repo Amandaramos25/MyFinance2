@@ -22,53 +22,15 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="341dp"
+            android:layout_width="74dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
             android:text="Foto:"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="420dp"
-            android:layout_height="2dp"
-            android:background="#423C3C"
-            android:backgroundTint="#A1A1A1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.555"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDate"
-            app:srcCompat="@android:drawable/divider_horizontal_textfield" />
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="420dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="2dp"
-            android:background="#423C3C"
-            android:backgroundTint="#A1A1A1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDate2"
-            app:srcCompat="@android:drawable/divider_horizontal_textfield" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="420dp"
-            android:layout_height="wrap_content"
-            android:background="#423C3C"
-            android:backgroundTint="#A1A1A1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2"
-            app:srcCompat="@android:drawable/divider_horizontal_textfield" />
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
             android:id="@+id/adicionarTrans"
@@ -84,189 +46,118 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="420dp"
-            android:layout_height="wrap_content"
-            android:background="#423C3C"
-            android:backgroundTint="#A1A1A1"
-            app:layout_constraintBottom_toTopOf="@+id/tipo_trans"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@android:drawable/divider_horizontal_textfield" />
-
-        <RadioGroup
-            android:id="@+id/tipo_trans"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-            <RadioButton
-                android:id="@+id/button_despesa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:padding="0dp"
-                android:text="Despesa"
-                android:textSize="16sp" />
-
-            <RadioButton
-                android:id="@+id/button_receita"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:padding="0dp"
-                android:text="Receita"
-                android:textSize="16sp" />
-
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/textView_valor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="14dp"
-            android:text="Valor: R$"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/editValor"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tipo_trans" />
-
-        <EditText
-            android:id="@+id/editValor"
-            android:layout_width="164dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginBottom="13dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="valor"
-            app:layout_constraintBottom_toTopOf="@+id/imageView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView_valor"
-            app:layout_constraintTop_toBottomOf="@+id/tipo_trans" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="420dp"
-            android:layout_height="wrap_content"
-            android:background="#423C3C"
-            android:backgroundTint="#A1A1A1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editValor"
-            app:srcCompat="@android:drawable/divider_horizontal_textfield" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="410dp"
-            android:layout_height="168dp"
+            android:id="@+id/categorias_recyclerView"
+            android:layout_width="408dp"
+            android:layout_height="128dp"
             android:layout_marginStart="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/adicionarTrans"
+            app:layout_constraintVertical_bias="0.404"
             app:setAdapter="@{adapter}" />
-
 
         <Button
             android:id="@+id/button2"
             android:layout_width="110dp"
             android:layout_height="48dp"
             android:layout_marginStart="81dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="12dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="#00BCD4"
             android:text="Criar"
             android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextDate"
             app:layout_constraintEnd_toStartOf="@+id/button4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+            app:layout_constraintTop_toBottomOf="@+id/categorias_recyclerView" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="112dp"
             android:layout_height="48dp"
             android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="96dp"
+            android:layout_marginBottom="24dp"
             android:backgroundTint="#00BCD4"
             android:text="Excluir"
             android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextDate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button2"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+            app:layout_constraintTop_toBottomOf="@+id/categorias_recyclerView"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="14dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="40dp"
             android:text="Data:"
             android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
             app:layout_constraintEnd_toStartOf="@+id/editTextDate"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="13dp"
             android:text="Comentario:"
             android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/editTextDate2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <EditText
             android:id="@+id/editTextDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="12dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Data"
             android:ems="10"
             android:inputType="date"
             android:minHeight="48dp"
-            android:text="Data"
+            app:layout_constraintBottom_toTopOf="@+id/editTextComent"
             app:layout_constraintEnd_toStartOf="@+id/button5"
             app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
 
         <EditText
-            android:id="@+id/editTextDate2"
+            android:id="@+id/editTextComent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="13dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="53dp"
+            android:layout_marginBottom="136dp"
             android:ems="10"
             android:inputType="date"
             android:minHeight="48dp"
-            android:text="comentario"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+            app:layout_constraintVertical_bias="0.925" />
 
         <Button
             android:id="@+id/button5"
             android:layout_width="66dp"
             android:layout_height="48dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="31dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:backgroundTint="#0000BCD4"
             android:text="a"
             app:icon="@drawable/icone_data"
@@ -274,48 +165,12 @@
             app:iconPadding="10dp"
             app:iconSize="30dp"
             app:iconTint="#00BCD4"
+            app:layout_constraintBottom_toTopOf="@+id/editTextComent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/editTextDate"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/button4"
+            app:layout_constraintVertical_bias="0.0"
             tools:text="Data" />
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="103dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="61dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="Adicionar foto 1"
-            app:icon="@drawable/ic_launcher_background"
-            app:iconSize="20dp"
-            app:iconTint="#33C9DC"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button7"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="103dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="61dp"
-            android:layout_marginEnd="160dp"
-            android:layout_marginBottom="16dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="Adicionar foto 2"
-            app:icon="@drawable/icone_mais"
-            app:iconGravity="top"
-            app:iconSize="100dp"
-            app:iconTint="#00BCD4"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button6"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
         <Button
             android:id="@+id/bt_voltar"
@@ -323,10 +178,12 @@
             android:layout_height="70dp"
             android:layout_marginStart="21dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
             android:backgroundTint="#00BCD4"
             android:contentDescription="Button"
             android:drawableBottom="@drawable/icone_voltar"
             android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/adicionarTrans"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -339,8 +196,121 @@
             android:backgroundTint="#00BCD4"
             android:contentDescription="Salvar"
             android:text="Salvar"
+            android:onClick="@{() -> vm.adicionar()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <RadioButton
+            android:id="@+id/button_receita"
+            android:layout_width="97dp"
+            android:layout_height="33dp"
+            android:layout_margin="16dp"
+            android:layout_marginEnd="200dp"
+            android:padding="0dp"
+            android:text="Receita"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editValor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_despesa"
+            app:layout_constraintTop_toBottomOf="@+id/adicionarTrans" />
+
+        <EditText
+            android:id="@+id/editValor"
+            android:layout_width="167dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="106dp"
+            android:layout_marginBottom="12dp"
+            android:contentDescription="valor"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/categorias_recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_valor"
+            app:layout_constraintTop_toBottomOf="@+id/editValor2" />
+
+        <EditText
+            android:id="@+id/editValor2"
+            android:layout_width="166dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="106dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="nome"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/editValor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_nome"
+            app:layout_constraintTop_toBottomOf="@+id/adicionarTrans" />
+
+        <TextView
+            android:id="@+id/textView_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="Valor: R$"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/categorias_recyclerView"
+            app:layout_constraintEnd_toStartOf="@+id/editValor"
+            app:layout_constraintHorizontal_bias="0.275"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_nome" />
+
+        <TextView
+            android:id="@+id/textView_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="32dp"
+            android:text="Nome:"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView_valor"
+            app:layout_constraintEnd_toStartOf="@+id/editValor2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_despesa" />
+
+        <RadioButton
+            android:id="@+id/button_despesa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="0dp"
+            android:text="Despesa"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editValor2"
+            app:layout_constraintEnd_toStartOf="@+id/button_receita"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adicionarTrans" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/editTextComent"
+            app:layout_constraintVertical_bias="0.489"
+            app:srcCompat="@drawable/icone_mais" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="130dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/editTextComent"
+            app:layout_constraintVertical_bias="0.489"
+            app:srcCompat="@drawable/icone_mais" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

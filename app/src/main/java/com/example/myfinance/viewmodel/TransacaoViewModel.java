@@ -13,53 +13,32 @@ import java.util.List;
 
 public class TransacaoViewModel extends ViewModel {
     private final TransacaoRepo repo;
-    private MutableLiveData<Boolean> tipo;
+    private MutableLiveData<String> nome;
     private MutableLiveData<Double> valor;
-    private MutableLiveData<String> categoria;
-    private MutableLiveData<Date> data;
-    private MutableLiveData<String> comentario;
-    private MutableLiveData<Integer> foto;
     private MutableLiveData<List<Transacao>> transacoes;
 
     public TransacaoViewModel() {
         repo = new TransacaoRepo();
 
-        tipo = new MutableLiveData<>();
+        nome = new MutableLiveData<>();
         valor = new MutableLiveData<>();
-        categoria = new MutableLiveData<>();
-        data = new MutableLiveData<>();
-        comentario = new MutableLiveData<>();
-        foto = new MutableLiveData<>();
+
         transacoes = new MutableLiveData<>(repo.getTrasacao());
     }
-    public void adicionar(){
-        Transacao t = new Transacao(tipo.getValue(),valor.getValue(),categoria.getValue(),data.getValue(),comentario.getValue(),foto.getValue());
+    public void adicionar() {
+        Transacao t = new Transacao(nome.getValue(), valor.getValue());
+        nome.setValue("");
+        valor.setValue(Double.valueOf(""));
+        repo.inserir(t);
+        transacoes.postValue(repo.getTrasacao());
     }
-    public MutableLiveData<Boolean> getTipo(){
-        return tipo;
-    }
+
     public LiveData<List<Transacao>> getTransacao(){
         return transacoes;
     }
 
     public MutableLiveData<Double> getValor() {
         return valor;
-    }
-
-    public MutableLiveData<String> getCategoria() {
-        return categoria;
-    }
-
-    public MutableLiveData<Date> getData() {
-        return data;
-    }
-
-    public MutableLiveData<String> getComentario() {
-        return comentario;
-    }
-
-    public MutableLiveData<Integer> getFoto() {
-        return foto;
     }
 
 }

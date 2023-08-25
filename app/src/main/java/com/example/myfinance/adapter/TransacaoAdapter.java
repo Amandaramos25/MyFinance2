@@ -11,7 +11,6 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfinance.R;
-import com.example.myfinance.databinding.TransacaoItemBinding;
 import com.example.myfinance.model.Transacao;
 import com.example.myfinance.viewmodel.TransacaoViewModel;
 
@@ -24,12 +23,16 @@ public class TransacaoAdapter extends RecyclerView.Adapter<TransacaoAdapter.Tran
     private List<Transacao> transacoes;
     private LifecycleOwner lifecycleOwner;
 
-    public TransacaoAdapter(LifecycleOwner lifecycleOwner){
+    private TransacaoViewModel transacaoViewModel;
+
+    public TransacaoAdapter(LifecycleOwner lifecycleOwner, TransacaoViewModel vm){
         this.transacoes = Collections.emptyList();
         this.lifecycleOwner = lifecycleOwner;
+        transacaoViewModel = vm;
     }
     public void atualizarLista(List<Transacao> transacoes){
         this.transacoes = transacoes;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -41,8 +44,9 @@ public class TransacaoAdapter extends RecyclerView.Adapter<TransacaoAdapter.Tran
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TransacaoAdapter.TransacaoViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull TransacaoViewHolder holder, int position) {
+        Transacao t = transacoes.get(position);
+        holder.bind(t);
     }
 
     @Override
@@ -61,7 +65,8 @@ public class TransacaoAdapter extends RecyclerView.Adapter<TransacaoAdapter.Tran
             valorTransacao = view.findViewById(R.id.valor_transacao);
         }
         public void bind(Transacao r){
-            nomeTransacao.setText(r.get);
+            nomeTransacao.setText(r.getNome());
+            valorTransacao.setText(Double.toString(r.getValor()));
         }
     }
 }

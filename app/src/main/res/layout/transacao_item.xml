@@ -1,66 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/fundoTran"
-        android:layout_width="403dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="4dp"
-        android:src="@drawable/formatotransacoes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="vm"
+            type="com.example.myfinance.viewmodel.TransacaoViewModel" />
+        <variable
+            name="transacao"
+            type="com.example.myfinance.model.Transacao" />
+    </data>
 
-    <ImageView
-        android:id="@+id/fundo_icone"
-        android:layout_width="46dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:src="@drawable/baseline_circle_24"
-        app:layout_constraintBottom_toBottomOf="@+id/fundoTran"
-        app:layout_constraintStart_toStartOf="@+id/fundoTran"
-        app:layout_constraintTop_toTopOf="@+id/fundoTran" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/icone_transacao"
-        android:layout_width="28dp"
-        android:layout_height="27dp"
-        android:layout_marginBottom="6dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fundo_icone"
-        app:layout_constraintEnd_toStartOf="@+id/nome_transacao"
-        app:layout_constraintHorizontal_bias="0.217"
-        app:layout_constraintStart_toStartOf="@+id/fundo_icone"
-        app:layout_constraintTop_toTopOf="@+id/fundo_icone"
-        app:layout_constraintVertical_bias="0.705"
-        app:srcCompat="@drawable/icone_casa" />
+        <ImageView
+            android:id="@+id/fundoTran"
+            android:layout_width="403dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/formatotransacoes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/nome_transacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/fundoTran"
-        app:layout_constraintStart_toEndOf="@+id/fundo_icone"
-        app:layout_constraintTop_toTopOf="@+id/fundoTran"
-        app:layout_constraintVertical_bias="0.488"
-        tools:text="NomeTransação" />
+        <ImageView
+            android:id="@+id/fundo_icone"
+            android:layout_width="46dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/baseline_circle_24"
+            app:layout_constraintBottom_toBottomOf="@+id/fundoTran"
+            app:layout_constraintStart_toStartOf="@+id/fundoTran"
+            app:layout_constraintTop_toTopOf="@+id/fundoTran" />
 
-    <TextView
-        android:id="@+id/valor_transacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/fundoTran"
-        app:layout_constraintStart_toEndOf="@+id/nome_transacao"
-        app:layout_constraintTop_toTopOf="@+id/fundoTran"
-        tools:text="R$ 0,00" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/icone_transacao"
+            android:layout_width="28dp"
+            android:layout_height="27dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/fundo_icone"
+            app:layout_constraintEnd_toStartOf="@+id/nome_transacao"
+            app:layout_constraintHorizontal_bias="0.217"
+            app:layout_constraintStart_toStartOf="@+id/fundo_icone"
+            app:layout_constraintTop_toTopOf="@+id/fundo_icone"
+            app:layout_constraintVertical_bias="0.705"
+            app:srcCompat="@drawable/icone_casa" />
+
+        <TextView
+            android:id="@+id/nome_transacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:text="@{transacao.nome}"
+            app:layout_constraintBottom_toBottomOf="@+id/fundoTran"
+            app:layout_constraintStart_toEndOf="@+id/fundo_icone"
+            app:layout_constraintTop_toTopOf="@+id/fundoTran"
+            app:layout_constraintVertical_bias="0.488"
+            tools:text="NomeTransação" />
+
+        <TextView
+            android:id="@+id/valor_transacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:text="@{Double.toString(transacao.valor)}"
+            app:layout_constraintBottom_toBottomOf="@+id/fundoTran"
+            app:layout_constraintStart_toEndOf="@+id/nome_transacao"
+            app:layout_constraintTop_toTopOf="@+id/fundoTran"
+            tools:text="R$ 0,00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
